@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Orçamento / Reserva - JK Transportes</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="bg-dark text-white">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a href="index.html" class="navbar-brand">JK Transportes</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+                        <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre Nós</a></li>
+                        <li class="nav-item"><a href="servicos.html" class="nav-link">Serviços</a></li>
+                        <li class="nav-item"><a href="frota.html" class="nav-link">Frota</a></li>
+                        <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+                        <li class="nav-item"><a href="reserva.html" class="nav-link">Reserva</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="reserva py-5" data-aos="fade-up">
+        <div class="container">
+            <h1 class="text-center mb-4">Solicitar Orçamento / Reserva</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nome Completo</label>
+                            <input type="text" class="form-control" id="name" placeholder="Seu nome completo" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="Seu e-mail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Telefone</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Seu telefone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="date" class="form-label">Data da Viagem</label>
+                            <input type="date" class="form-control" id="date" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="location" class="form-label">Local de Partida</label>
+                            <input type="text" class="form-control" id="location" placeholder="Cidade ou endereço de partida" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="destination" class="form-label">Destino</label>
+                            <input type="text" class="form-control" id="destination" placeholder="Cidade ou endereço de destino" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Informações Adicionais</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Digite detalhes adicionais, se houver"></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">Enviar Solicitação</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 JK Transportes. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>

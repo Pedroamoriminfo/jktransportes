@@ -1,6 +1,5 @@
 @include('layouts.app')
 
-@section('home')
     <br>
     <!-- Seção de Banner da Frota -->
     <section id="frota-banner" class="py-5 bg-light" data-aos="fade-up">
@@ -84,4 +83,4 @@
     </section>
 
 
-@endsection
+

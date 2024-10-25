@@ -221,7 +221,6 @@ class Validator implements ValidatorContract
         'Required',
         'RequiredIf',
         'RequiredIfAccepted',
-        'RequiredIfDeclined',
         'RequiredUnless',
         'RequiredWith',
         'RequiredWithAll',
@@ -253,7 +252,6 @@ class Validator implements ValidatorContract
         'DeclinedIf',
         'RequiredIf',
         'RequiredIfAccepted',
-        'RequiredIfDeclined',
         'RequiredUnless',
         'RequiredWith',
         'RequiredWithAll',
@@ -313,7 +311,7 @@ class Validator implements ValidatorContract
     /**
      * The exception to throw upon failure.
      *
-     * @var class-string<\Illuminate\Validation\ValidationException>
+     * @var string
      */
     protected $exception = ValidationException::class;
 
@@ -563,7 +561,7 @@ class Validator implements ValidatorContract
      * @param  array|null  $keys
      * @return \Illuminate\Support\ValidatedInput|array
      */
-    public function safe(?array $keys = null)
+    public function safe(array $keys = null)
     {
         return is_array($keys)
                 ? (new ValidatedInput($this->validated()))->only($keys)
@@ -579,11 +577,7 @@ class Validator implements ValidatorContract
      */
     public function validated()
     {
-        if (! $this->messages) {
-            $this->passes();
-        }
-
-        throw_if($this->messages->isNotEmpty(), $this->exception, $this);
+        throw_if($this->invalid(), $this->exception, $this);
 
         $results = [];
 
@@ -593,7 +587,7 @@ class Validator implements ValidatorContract
             $value = data_get($this->getData(), $key, $missingValue);
 
             if ($this->excludeUnvalidatedArrayKeys &&
-                (in_array('array', $rules) || in_array('list', $rules)) &&
+                in_array('array', $rules) &&
                 $value !== null &&
                 ! empty(preg_grep('/^'.preg_quote($key, '/').'\.+/', array_keys($this->getRules())))) {
                 continue;
@@ -1434,7 +1428,7 @@ class Validator implements ValidatorContract
      * @param  callable|null  $formatter
      * @return $this
      */
-    public function setImplicitAttributesFormatter(?callable $formatter = null)
+    public function setImplicitAttributesFormatter(callable $formatter = null)
     {
         $this->implicitAttributesFormatter = $formatter;
 
@@ -1513,7 +1507,7 @@ class Validator implements ValidatorContract
     /**
      * Get the exception to throw upon failed validation.
      *
-     * @return class-string<\Illuminate\Validation\ValidationException>
+     * @return string
      */
     public function getException()
     {
@@ -1523,7 +1517,7 @@ class Validator implements ValidatorContract
     /**
      * Set the exception to throw upon failed validation.
      *
-     * @param  class-string<\Illuminate\Validation\ValidationException>  $exception
+     * @param  string  $exception
      * @return $this
      *
      * @throws \InvalidArgumentException

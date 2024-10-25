@@ -13,6 +13,22 @@ class HomeController extends Controller
     {
         return view('site.index');
     }
+    public function sobre()
+    {
+        return view('site.sobre');
+    }
+    public function servicos()
+    {
+        return view('site.servicos');
+    }
+    public function contato()
+    {
+        return view('site.contato');
+    }
+    public function reserva()
+    {
+        return view('site.reserva');
+    }
 
     /**
      * Show the form for creating a new resource.

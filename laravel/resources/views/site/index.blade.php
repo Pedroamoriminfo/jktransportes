@@ -1,10 +1,9 @@
-@include('layouts.app')
+@extends('layouts.app')
 
-    <br>
+@section('home')
     <!-- Seção de Banner da Frota -->
     <section id="frota-banner" class="py-5 bg-light" data-aos="fade-up">
-        <div class="col-12">
-
+        <div class="container-fluid text-center">
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div id="frotaCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -13,13 +12,13 @@
                                 <img src="1.png" class="d-block w-100" alt="Veículo 3">
                             </div> -->
                             <div class="carousel-item active">
-                                <img src="2.png" class="d-block w-100" alt="Veículo 2">
+                                <img src="{{ url('/assets/img/2.png') }}" class="d-block w-100" alt="Veículo 2">
                             </div>
                             <div class="carousel-item">
-                                <img src="3.png" class="d-block w-100" alt="Veículo 3">
+                                <img src="{{ url('/assets/img/3.pn') }}g" class="d-block w-100" alt="Veículo 3">
                             </div>
                             <div class="carousel-item">
-                                <img src="4.png" class="d-block w-100" alt="Veículo 4">
+                                <img src="{{ url('/assets/img/4.png') }}" class="d-block w-100" alt="Veículo 4">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#frotaCarousel"
@@ -61,7 +60,7 @@
                 <div class="col-md-6">
                     <div class="card p-4">
                         <div class="container mt-1 mb-1">
-                            <img class="img-fluid" src="cliente1.png" alt=""
+                            <img class="img-fluid" src="{{ url('/assets/img/cliente1.png') }}" alt=""
                                 style="border-radius: 100%; height: 200px;" srcset="">
                         </div>
                         <p>"A JK Transportes proporcionou uma viagem tranquila e confortável. Super recomendo!"</p>
@@ -71,7 +70,7 @@
                 <div class="col-md-6">
                     <div class="card p-4">
                         <div class="container mt-1 mb-1">
-                            <img class="img-fluid" src="cliente2.png" alt=""
+                            <img class="img-fluid" src="{{ url('/assets/img/cliente2.png') }}" alt=""
                                 style="border-radius: 100%; height: 200px;" srcset="">
                         </div>
                         <p>"Serviço de primeira classe, com motoristas profissionais e atenciosos."</p>
@@ -81,6 +80,6 @@
             </div>
         </div>
     </section>
-
+@endsection
 
 

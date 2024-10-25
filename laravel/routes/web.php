@@ -19,3 +19,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/',[HomeController::class,'index'])->name('site.home');
+Route::get('home',[HomeController::class,'index'])->name('site.home');
+Route::get('sobre',[HomeController::class,'sobre'])->name('site.sobre');
+Route::get('servicos',[HomeController::class,'servicos'])->name('site.servicos');
+Route::get('contato',[HomeController::class,'contato'])->name('site.contato');
+Route::get('reserva',[HomeController::class,'reserva'])->name('site.reserva');

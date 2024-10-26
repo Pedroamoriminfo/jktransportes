@@ -24,3 +24,6 @@ Route::get('sobre',[HomeController::class,'sobre'])->name('site.sobre');
 Route::get('servicos',[HomeController::class,'servicos'])->name('site.servicos');
 Route::get('contato',[HomeController::class,'contato'])->name('site.contato');
 Route::get('reserva',[HomeController::class,'reserva'])->name('site.reserva');
+
+Route::get('reserva/create',[HomeController::class,'reservaCreate'])->name('site.reserva.create');
+Route::get('contato/create',[HomeController::class,'contatoCreate'])->name('site.contato.create');

@@ -1,11 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
 
+namespace App\Http\Controllers;
+use App\Services\MailService;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+
+    protected $mailService;
+
+    public function __construct(MailService $mailService)
+    {
+        $this->mailService = $mailService;
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -33,48 +42,32 @@ class HomeController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function reservaCreate(Request $request)
     {
-        //
+        $de = $request->input('email');
+        $nomeDe = $request->input('name');
+        $para = env('EMAIL_NAME');
+        $assunto = 'Assunto do E-mail';
+        $mensagemHtml = '<h1>Olá!</h1><p>Esta é uma mensagem em HTML.</p>';
+        $mensagemTexto = 'Olá! Esta é a mensagem em texto, caso o HTML não funcione.';
+
+        $resultado = $this->mailService->enviarEmail($de, $nomeDe,$para, $assunto, $mensagemHtml, $mensagemTexto);
+        return response()->json(['message' => $resultado]);
+    }
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function contatoCreate(Request $request)
+    {
+        $de = $request->input('email');
+        $nomeDe = $request->input('name');
+        $para = env('EMAIL_NAME');
+        $assunto = 'Assunto do E-mail';
+        $mensagemHtml = '<h1>Olá!</h1><p>Esta é uma mensagem em HTML.</p>';
+        $mensagemTexto = 'Olá! Esta é a mensagem em texto, caso o HTML não funcione.';
+
+        $resultado = $this->mailService->enviarEmail($de, $nomeDe,$para, $assunto, $mensagemHtml, $mensagemTexto);
+        return response()->json(['message' => $resultado]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

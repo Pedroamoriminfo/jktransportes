@@ -1,6 +1,6 @@
  <nav class="navbar navbar-expand-lg bg-black fixed-top">
         <div class="container">
-            <a href="index.html" class="navbar-brand"><img class="navbar-brand" style="object-fit: cover; height: 80px;" src="{{ url('assets/img/logo.png') }}"></a>
+            <a href="{{ url('/') }}" class="navbar-brand"><img class="navbar-brand" style="object-fit: cover; height: 80px;" src="{{ url('assets/img/logo.png') }}"></a>
             <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>

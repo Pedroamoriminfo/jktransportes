@@ -1,6 +1,7 @@
 @extends('layouts.app')
-
+<br>
 @section('home')
+
     <!-- Seção de Banner da Frota -->
     <section id="frota-banner" class="py-5 bg-light" data-aos="fade-up">
         <div class="container-fluid text-center">

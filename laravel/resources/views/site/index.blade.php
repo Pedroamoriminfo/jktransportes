@@ -42,7 +42,7 @@
         <div class="container">
             <h1 class="display-4">Conforto e Segurança em Cada Viagem</h1>
             <p class="lead">Transporte executivo de alta qualidade para você ou sua empresa.</p>
-            <a href="reserva.html" class="btn btn-primary btn-lg">Solicitar Orçamento</a>
+            <a href="{{ url('orcamento') }}" class="btn btn-primary btn-lg">Solicitar Orçamento</a>
         </div>
     </section>
 
